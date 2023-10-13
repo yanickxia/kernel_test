@@ -18,9 +18,7 @@ typedef struct client_s {
     int events;            /* control EPOLLIN/EPOLLOUT events. */
 } client_t;
 
-client_t *g_clients[MAX_CLIENT_CNT];      /* client's array. */
-client_t *add_client(int fd, int events); /* add a new client. */
-client_t *get_client(int fd);             /* get client ptr. */
+
 int del_client(int fd);                   /* close fd and clear data. */
 
 int init_epoll(int listen_fd);

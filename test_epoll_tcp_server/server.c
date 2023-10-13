@@ -5,6 +5,10 @@
 #include <sys/epoll.h>
 #include <sys/socket.h>
 
+client_t *g_clients[MAX_CLIENT_CNT];      /* client's array. */
+client_t *add_client(int fd, int events); /* add a new client. */
+client_t *get_client(int fd);             /* get client ptr. */
+
 int g_epfd = -1;          /* epoll file descriptor. */
 int g_listen_fd = -1;     /* listen socket's file descriptor. */
 int g_ls_array[16] = {0}; /* listen socket's file descriptor's array. */
